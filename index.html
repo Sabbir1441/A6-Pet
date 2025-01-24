@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peddy</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: "#da373d",
+                    },
+                    fontFamily: {
+                        lato: ["Lato", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="font-lato">
+    <header class="container mx-auto">
+        <div class="navbar bg-base-100 justify-between">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                        <li><a>Home</a></li>
+                        <li><a>Shop</a></li>
+                        <li><a>Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="flex items-center">
+                    <h6><img src="images/logo.webp" alt="" /></h6>
+                    <h3 class="btn btn-ghost text-xl">Peddy</h3>
+                </div>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal px-1">
+                    <li><a>Home</a></li>
+                    <li><a>Shop</a></li>
+                    <li><a>Contact</a></li>
+                </ul>
+            </div>
+            <div class="navbar-end">
+                <i class="fa-regular fa-user border p-3 rounded-full"></i>
+            </div>
+        </div>
+
+        <div class="mt-7">
+            <div class="text-center space-y-4 w-10/12 md:w-6/12 mx-auto">
+                <h6 class="text-lg">Bringing Families Together ❤️‍🔥</h6>
+                <h1 class="text-4xl font-extrabold">
+                    Your Path to Adoption <br />
+                    Starts Here
+                </h1>
+
+                <p>
+                    It is a long established fact that a reader will be distracted by
+                    the readable content of a page when looking at its layout. The point
+                    of using Lorem Ipsum is that it has a.
+                </p>
+
+                <a class="btn bg-[#0E7A81] text-white" href="#main-part">View More</a>
+            </div>
+
+            <div class="w-10/12 md:w-6/12 mx-auto mt-10">
+                <img src="images/pet.webp" alt="" />
+            </div>
+        </div>
+    </header>
+
+    <main id="main-part" class="container mx-auto mb-12 ">
+        <section>
+            <h1 class="w-3/4 mx-auto md:text-4xl text-2xl font-bold mt-10 text-center">
+                Adopt Your Best Friend
+            </h1>
+            <p class="lg:w-2/4 w-10/12 mx-auto font-semibold mt-5 text-center">
+                Adopting a pet not only gives them a second chance at life but also
+                fills your home with joy and unconditional love. Start your journey
+                today and experience the incredible bond that only a pet can bring."
+            </p>
+        </section>
+
+        <div class="w-full p-10">
+            <div id="category-part" class="grid grid-cols-2 lg:grid-cols-4 gap-8"></div>
+        </div>
+
+        <div class="flex justify-between p-4">
+            <h4 class="text-2xl font-bold">Best Deal For you</h4>
+            <button id="sortByPriceId" class="btn bg-[#0E7A81] text-white">
+                Sort by Price
+            </button>
+        </div>
+
+        <section class="flex flex-col max-h-fit lg:flex-row p-4 md:p-2 lg:p-0 gap-5">
+            <div id="show-pet-cards" class="lg:w-9/12 grid grid-cols-1 w-full md:grid-cols-2 lg:grid-cols-3 gap-5">
+            </div>
+
+            <div class="lg:w-3/12 w-full border rounded-xl">
+                <div id="showImageContainer" class="grid grid-cols-2 p-1 gap-2">
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <dialog id="adopt_modal_5" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+            <div class="text-center">
+                <i class="fa-regular fa-handshake text-3xl"></i>
+                <h3 class="text-2xl font-extrabold">Congrates</h3>
+                <p class="py-4">Adoption process is Start for your pet</p>
+                <div id="countDownDiv">
+                </div>
+            </div>
+        </div>
+    </dialog>
+    <dialog id="details_modal_5" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+            <div id="detailsLoaderId" class="p-2 md:p-5 space-y-4">
+            </div>
+            <button id="cancleBtn" class="btn w-full bg-[rgba(14,122,129,0.2)] text-[rgb(14,122,129)]">
+                Cancel
+            </button>
+        </div>
+    </dialog>
+
+    <footer class="bg-black">
+        <div
+          class="w-11/12 mx-auto py-10 flex flex-col md:flex-row md:justify-between md:items-center">
+          <div>
+            <div class="flex gap-2 text-center items-center my-4">
+              <div>
+                <img class="w-5 h-5" src="images//logo.webp" alt="" />
+              </div>
+              <h1 class="text-xl text-white font-bold">Paddy</h1>
+            </div>
+            <p class="text-white font-medium my-2">
+              Location: Mirpur , Dhaka , Bangladesh
+            </p>
+            <p class="text-white font-medium my-2">Phone: +880 1789 9226 23</p>
+            <p class="text-white font-medium my-2">Email: sabbirahmed@gmail.com</p>
+            <p class="text-white font-medium my-2">
+              Openings hours: 9.00 AM - 5.00 PM
+            </p>
+            <div class="flex">
+              <img
+                class="w-10 h-10 mr-3"
+                src="https://img.icons8.com/?size=100&id=uLWV5A9vXIPu&format=png&color=000000"
+                alt="" />
+              <img
+                class="w-10 h-10 mx-3"
+                src="https://img.icons8.com/?size=100&id=01GWmP9aUoPj&format=png&color=FFFFFF"
+                alt="" />
+              <img
+                class="w-10 h-10 mx-3"
+                src="https://img.icons8.com/?size=100&id=19318&format=png&color=000000"
+                alt="" />
+              <img
+                class="w-10 h-10 mx-3"
+                src="https://img.icons8.com/?size=100&id=Xy10Jcu1L2Su&format=png&color=000000"
+                alt="" />
+            </div>
+          </div>
+          <div class="text-white my-5">
+            <h1 class="text-lg font-semibold">Useful Links</h1>
+            <div class="mt-5 font-medium">
+              <p class="text-white font-medium my-2">Home</p>
+              <p class="text-white font-medium my-2">About Us</p>
+              <p class="text-white font-medium my-2">Animals</p>
+              <p class="text-white font-medium my-2">Foundation</p>
+              <p class="text-white font-medium my-2">Contact</p>
+            </div>
+          </div>
+          <div>
+            <h1 class="text-lg font-semibold text-white">Drop a Message</h1>
+            <input
+              class="mt-5 py-2 pl-4 rounded-md"
+              type="text"
+              placeholder="Enter your email" />
+            <button
+              class="bg-[#0E7A81] rounded-lg font-medium text-lg text-white py-2 px-4">
+              Subscribe
+            </button>
+          </div>
+        </div>
+      </footer>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
